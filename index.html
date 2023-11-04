@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление записи в JSON</title>
+</head>
+<body>
+  <button id="addEntryButton" onclick="addEntry()">Добавить запись</button>
+
+  <script>
+    async function addEntry() {
+      const response = await fetch('/add-entry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ index: 1, date: new Date().toLocaleDateString() }),
+      });
+      const data = await response.json();
+      alert(data.message);
+    }
+  </script>
+</body>
+</html>
