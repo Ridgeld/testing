@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "api/updateData.js": {
+        "handler": "api/updateData.handler",
+        "runtime": "nodejs16.x"
+      }
+    }
+  }
